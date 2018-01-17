@@ -1,0 +1,124 @@
+{% extends 'layout/master.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="card clearfix" id="filters-holder">
+            <div class="col s4 form-label-field">
+                <label>Izaberite brend</label>
+                <select class="browser-default">
+                    <option value="" disabled selected>Izaberite brend</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
+            <div class="col s4 form-label-field">
+                <label>Izaberite model</label>
+                <select class="browser-default">
+                    <option value="" disabled selected>Izaberite model</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
+            <div class="col s4 form-label-field">
+                <div class="row">
+                    <div class="col s4 form-label-field">
+                        <label>Cena od</label>
+                        <input type="text">
+                    </div>
+                    <div class="col s4 form-label-field">
+                        <label>Cena do</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="row" id="main-section">
+        <div class="col s9 products-holder">
+            <div class="col l3 m6 s12 product-item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="http://plazathemes.com/demo/boxstore/pub/media/catalog/product/cache/small_image/198x198/beff4985b56e3afdbeabfc89641a4582/7/-/7-7digital_2.jpg" alt="iRobot Roomba 651">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="/roboter/saugroboter/irobot-roomba-651/">iRobot Roomba 651</a></h3>
+                        {#<span class="price-used"><i class="used">0 gebrauchte Roomba 651</i></span>#}
+                    </div>
+                    <div class="card-action row">
+                        <span class="col s6 view-more-holder">
+                           <a href="#" class="button view-detail">Detaljnije</a>
+                        </span>
+                        <span class="col s6 price">
+                            <span> 448.00 €</span>
+                            {#<span class="savemoney"><strike>449.00 €</strike></span>#}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col l3 m6 s12 product-item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="http://plazathemes.com/demo/boxstore/pub/media/catalog/product/cache/small_image/198x198/beff4985b56e3afdbeabfc89641a4582/9/d/9digital_1.jpg" alt="iRobot Roomba 651">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="/roboter/saugroboter/irobot-roomba-651/">iRobot Roomba 651</a></h3>
+                        {#<span class="price-used"><i class="used">0 gebrauchte Roomba 651</i></span>#}
+                    </div>
+                    <div class="card-action row">
+                        <span class="col s6 view-more-holder">
+                           <a href="#" class="button view-detail">Detaljnije</a>
+                        </span>
+                        <span class="col s6 price">
+                            <span> 448.00 €</span>
+                            {#<span class="savemoney"><strike>449.00 €</strike></span>#}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col l3 m6 s12 product-item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="http://plazathemes.com/demo/boxstore/pub/media/catalog/product/cache/small_image/198x198/beff4985b56e3afdbeabfc89641a4582/1/8/18-18digital.jpg" alt="iRobot Roomba 651">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="/roboter/saugroboter/irobot-roomba-651/">iRobot Roomba 651</a></h3>
+                        {#<span class="price-used"><i class="used">0 gebrauchte Roomba 651</i></span>#}
+                    </div>
+                    <div class="card-action row">
+                        <span class="col s6 view-more-holder">
+                           <a href="#" class="button view-detail">Detaljnije</a>
+                        </span>
+                        <span class="col s6 price">
+                            <span> 448.00 €</span>
+                            {#<span class="savemoney"><strike>449.00 €</strike></span>#}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col l3 m6 s12 product-item">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="http://plazathemes.com/demo/boxstore/pub/media/catalog/product/cache/small_image/198x198/beff4985b56e3afdbeabfc89641a4582/1/8/18-18digital.jpg" alt="iRobot Roomba 651">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="/roboter/saugroboter/irobot-roomba-651/">iRobot Roomba 651</a></h3>
+                        {#<span class="price-used"><i class="used">0 gebrauchte Roomba 651</i></span>#}
+                    </div>
+                    <div class="card-action row">
+                        <span class="col s6 view-more-holder">
+                           <a href="#" class="button view-detail">Detaljnije</a>
+                        </span>
+                        <span class="col s6 price">
+                            <span> 448.00 €</span>
+                            {#<span class="savemoney"><strike>449.00 €</strike></span>#}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="col s3" id="sidebar-section">
+
+        </section>
+    </section>
+{% endblock %}
