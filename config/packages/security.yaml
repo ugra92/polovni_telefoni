@@ -1,0 +1,22 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        app_db_provider:
+            entity:
+                class: App\Entity\User
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: ~
+            form_login:
+                 login_path: login
+                 check_path: login
+            provider: app_db_provider
+    access_control:
+        # require ROLE_USER for /user*
+        - { path: ^/user, roles: ROLE_USER }
