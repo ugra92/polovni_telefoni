@@ -1,0 +1,34 @@
+<?php
+namespace {{ bundleName }}\Controller;
+
+use {{ bundleName }}\Entity\{{ className }};
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+
+
+class {{ className }}Controller extends Controller
+{
+    /**
+    * @Route("{{ classPrefix }}/create", name="{{ classPrefix }}-create")
+    * @return Response
+    */
+    public function create{{ className }}Action()
+    {
+    return $this->render('{{ className }}/{{ classPrefix }}-create.html.twig', array());
+    }
+
+    /**
+    * @Route("json/{{ classPrefix }}/create", name="{{ classPrefix }}-create-json")
+    * @param Request $request
+    */
+    public function create{{ className }}JSONAction(Request $request)
+    {
+        $obj = $this->container->get('App\Deserializer\AbstractDeserializer')->deserialize($request->getContent(), {{ className }}::class);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($obj);
+        $em->flush();
+        return $this->render('{{ className }}/{{ classPrefix }}-create.html.twig', array());
+    }
+}

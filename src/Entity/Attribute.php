@@ -184,4 +184,10 @@ class Attribute
         $value->setAttribute(null);
     }
 
+    /**
+     * @return mixed
+     */
+    public function toString(){
+        return $this->getName();
+    }
 }

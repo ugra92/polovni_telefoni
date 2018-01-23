@@ -1,29 +1,24 @@
 <html>
 <head>
-<link rel="stylesheet" href="{{ asset('/build/css/materialize_css.css') }}">
-<link rel="stylesheet" href="{{ asset('/build/css/sumoselect_css.css') }}">
-<link rel="stylesheet" href="{{ asset('/build/css/main.css') }}">
+    {#<link rel="stylesheet" href="{{ asset('/build/css/materialize_css.css') }}">#}
+    {#<link rel="stylesheet" href="{{ asset('/build/css/sumoselect_css.css') }}">#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% block customStyle %}
+
+    {% endblock %}
+    <link rel="stylesheet" href="{{ asset('/build/css/main.css') }}">
 </head>
 <body>
-<nav>
-    <div class="container">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Polovni mobilni</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+{% include 'layout/menu.html.twig' %}
 <div class="container">
     {% block body %}
     {% endblock %}
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script src="{{ asset('/build/js/materialize_js.js') }}"></script>
-<script src="{{ asset('/build/js/sumoselect_js.js') }}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% block customScript %}
+{% endblock %}
 </body>
 </html>

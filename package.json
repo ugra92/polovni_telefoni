@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.17.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "sumoselect": "https://github.com/HemantNegi/jquery.sumoselect",
+    "webpack-notifier": "^1.5.0"
+  },
+  "dependencies": {
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.2.1",
+    "yarn": "^1.3.2"
+  }
+}

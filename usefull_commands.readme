@@ -1,0 +1,13 @@
+/** Run server */
+php bin/console server:run
+
+/** Update database */
+php bin/console doctrine:migrations:diff
+php bin/console doctrine:migrations:migrate
+
+/** Generate doctrine entity */
+php bin/console make:entity __name__
+
+/** Compile assets */
+yarn run encore dev
+

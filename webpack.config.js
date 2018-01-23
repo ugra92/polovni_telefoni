@@ -9,11 +9,11 @@ Encore
     .setPublicPath('/build')
 
     // will create public/build/app.js and public/build/app.css
-    .addEntry('js/materialize_js', './assets/js/materialize.min.js')
-    .addEntry('css/materialize_css', './assets/css/materialize.min.css')
+    // .addEntry('js/materialize_js', './assets/js/materialize.min.js')
+    // .addEntry('css/materialize_css', './assets/css/materialize.min.css')
     .addEntry('css/main', './assets/css/main.scss')
-    .addEntry('js/sumoselect_js', './node_modules/sumoselect/jquery.sumoselect.js')
-    .addEntry('css/sumoselect_css', './node_modules/sumoselect/sumoselect.css')
+    // .addEntry('js/backend/adapter', './assets/js/backend/adapter.js')
+    // .addEntry('js/sumoselect_js', './node_modules/sumoselect/jquery.sumoselect.js')
 
     // allow sass/scss files to be processed
     .enableSassLoader()

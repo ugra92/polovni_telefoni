@@ -1,20 +1,4 @@
 {
   "build/css/main.css": "/build/css/main.css",
-  "build/css/main.js": "/build/css/main.js",
-  "build/css/materialize_css.css": "/build/css/materialize_css.css",
-  "build/css/materialize_css.js": "/build/css/materialize_css.js",
-  "build/css/sumoselect_css.css": "/build/css/sumoselect_css.css",
-  "build/css/sumoselect_css.js": "/build/css/sumoselect_css.js",
-  "build/fonts/Roboto-Bold.woff": "/build/fonts/Roboto-Bold.eed9aab5.woff",
-  "build/fonts/Roboto-Bold.woff2": "/build/fonts/Roboto-Bold.c0f1e4a4.woff2",
-  "build/fonts/Roboto-Light.woff": "/build/fonts/Roboto-Light.ea36cd9a.woff",
-  "build/fonts/Roboto-Light.woff2": "/build/fonts/Roboto-Light.3c37aa69.woff2",
-  "build/fonts/Roboto-Medium.woff": "/build/fonts/Roboto-Medium.cf4d60bc.woff",
-  "build/fonts/Roboto-Medium.woff2": "/build/fonts/Roboto-Medium.1561b424.woff2",
-  "build/fonts/Roboto-Regular.woff": "/build/fonts/Roboto-Regular.3cf6adf6.woff",
-  "build/fonts/Roboto-Regular.woff2": "/build/fonts/Roboto-Regular.5136cbe6.woff2",
-  "build/fonts/Roboto-Thin.woff": "/build/fonts/Roboto-Thin.44b78f14.woff",
-  "build/fonts/Roboto-Thin.woff2": "/build/fonts/Roboto-Thin.1f35e6a1.woff2",
-  "build/js/materialize_js.js": "/build/js/materialize_js.js",
-  "build/js/sumoselect_js.js": "/build/js/sumoselect_js.js"
+  "build/css/main.js": "/build/css/main.js"
 }

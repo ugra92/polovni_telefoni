@@ -98,4 +98,12 @@ class AttributeSet
         $attribute->setAttributeSet(null);
     }
 
+    /**
+     * @return mixed
+     */
+    public function toString()
+    {
+        return $this->getName();
+    }
+
 }

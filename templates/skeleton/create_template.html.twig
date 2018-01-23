@@ -1,0 +1,54 @@
+{{ "{% extends 'layout/backend/crud-master.html.twig' %}" }}
+{{ "{% block body %}" }}
+{% for prop in fields %}
+    {% if prop['type'] == 'boolean' %}
+        <div class="form-group">
+            <label for="{{ prop['name'] }}">{{ prop['name'] }}</label>
+            <input type="checkbox" name="{{ prop['name'] }}" class="form-control">
+        </div>
+    {% else %}
+    <div class="form-group">
+        <label for="{{ prop['name'] }}">{{ prop['name'] }}</label>
+        <input type="text" name="{{ prop['name'] }}" class="form-control">
+    </div>
+    {% endif %}
+{% endfor %}
+{% for rel in relationships %}
+    {% if rel['type'] == 'single' %}
+        {% autoescape %}
+            {{ ('{% set entityName = "' ~ rel['entity'] ~ '" %}')|raw }}
+        {% endautoescape %}
+        {{ '{% set ' ~ rel['name'] ~ ' = get_entities(entityName)%}' }}
+        <select name="{{ rel['name'] }}" id="{{ rel['name'] }}" class="form-control">
+            {{ '{% for item in '~rel['name']~' %}' }}
+            <option value="{{ '{{ item.getId }}' }}">{{ '{{ item.toString }}'}}</option>
+            {{ '{% endfor %}' }}
+        </select>
+    {% endif %}
+{% endfor %}
+
+<button id="save" class="btn btn-default">Sacuvaj</button>
+{{ "{% endblock %}" }}
+{{ "{% block scripts %}" }}
+    <script>
+        var data = {};
+
+        function handleResponse(data) {
+            console.log(data);
+        }
+        $('#save').on('click', function () {
+            $('input').each(function (index, item) {
+                switch ($(item).prop('type')){
+                    case ('text'): {
+                        data[$(item).prop('name')] = $(item).val();
+                    } break;
+                    case ('checkbox'): {
+                        data[$(item).prop('name')] = $(item).prop('checked');
+                    } break;
+                }
+            });
+            console.log(data);
+            adapter.sendData('/json/{{ saveRoute }}/create',data, 'POST', handleResponse, this);
+        });
+    </script>
+{{ "{% endblock %}" }}
