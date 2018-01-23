@@ -47,6 +47,11 @@
                     } break;
                 }
             });
+
+            $('select').each(function (index, item) {
+                data[$(item).prop('name')] = $(item).val();
+            });
+
             console.log(data);
             adapter.sendData('/json/{{ saveRoute }}/create',data, 'POST', handleResponse, this);
         });

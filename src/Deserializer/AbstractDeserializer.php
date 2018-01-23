@@ -14,21 +14,22 @@ class AbstractDeserializer
     /**
      * @var EntityManager
      */
-//    private $em;
+    private $entityManager;
 
-    public function __construct()
+    public function __construct(EntityManager $entityManager)
     {
-//        $this->em = $em;
+        $this->entityManager = $entityManager;
     }
 
     public function deserialize($jsonData, $class){
-//        $metaData = $this->em->getClassMetadata($class);
+        $metaData = $this->entityManager->getClassMetadata($class);
+//        var_dump($metaData);exit;
         $instance = new $class();
         $data = json_decode($jsonData);
         foreach ($data as $key => $value) {
             $instance->{'set'.ucfirst($key)}($value);
         }
-
+        var_dump($instance);exit;
         return $instance;
     }
 }
