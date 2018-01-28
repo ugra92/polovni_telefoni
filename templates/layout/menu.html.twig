@@ -10,7 +10,11 @@
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-9">
-                    <p class="wishlist-link"><a href="#"><i class="material-icons">star</i></a></p>
+                    {% if app.user %}
+                        <p class="wishlist-link"><a href="#"><i class="material-icons">star</i></a></p>
+                    {% else %}
+                        <p class="wishlist-link"><a href="{{ path('login') }}"><i class="material-icons">input</i></a></p>
+                    {% endif %}
                     <form class="form minisearch" id="search_mini_form" action="#" method="get">
                         <div class="field search">
                             <input id="search" type="text" name="q" value="" placeholder="Pretraga..." class="input-text" maxlength="128" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off">

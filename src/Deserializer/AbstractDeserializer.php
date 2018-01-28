@@ -23,13 +23,15 @@ class AbstractDeserializer
 
     public function deserialize($jsonData, $class){
         $metaData = $this->entityManager->getClassMetadata($class);
-//        var_dump($metaData);exit;
         $instance = new $class();
         $data = json_decode($jsonData);
         foreach ($data as $key => $value) {
+            if(is_object($value)){
+                $value = $this->entityManager->getReference('App\Entity\\'.ucfirst($key), $value->id);
+            }
             $instance->{'set'.ucfirst($key)}($value);
         }
-        var_dump($instance);exit;
+
         return $instance;
     }
 }

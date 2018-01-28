@@ -49,7 +49,7 @@
             });
 
             $('select').each(function (index, item) {
-                data[$(item).prop('name')] = $(item).val();
+                data[$(item).prop('name')] = { id : $(item).val()};
             });
 
             console.log(data);

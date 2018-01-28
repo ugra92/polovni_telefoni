@@ -190,4 +190,12 @@ class Attribute
     public function toString(){
         return $this->getName();
     }
+
+    /**
+     * @return string
+     */
+    public static function getClassName()
+    {
+        return Attribute::class;
+    }
 }
