@@ -50,6 +50,7 @@ class Product
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->productAttributeValues = new ArrayCollection();
     }
 
     /**
@@ -164,5 +165,23 @@ class Product
     {
         $this->images->removeElement($image);
         $image->setProduct(null);
+    }
+
+    /**
+     * @param ProductAttributeValue $productAttributeValue
+     */
+    public function addProductAttributeValue(ProductAttributeValue $productAttributeValue)
+    {
+        $this->productAttributeValues[] = $productAttributeValue;
+        $productAttributeValue->setProduct($this);
+    }
+
+    /**
+     * @param ProductAttributeValue $productAttributeValue
+     */
+    public function removeProductAttributeValue(ProductAttributeValue $productAttributeValue)
+    {
+        $this->productAttributeValues->removeElement($productAttributeValue);
+        $productAttributeValue->setProduct(null);
     }
 }

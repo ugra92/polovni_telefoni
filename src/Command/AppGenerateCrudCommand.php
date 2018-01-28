@@ -136,7 +136,11 @@ class AppGenerateCrudCommand extends ContainerAwareCommand
                     'extensionCall' =>'{% set ' . $relName . ' = getEntities("'.$relMeta['targetEntity'].'")%}'
                 ];
             } else {
-                $relationships[] = ['name' => $relName, 'entity' => $relMeta['targetEntity'], 'type' => 'multiple'];
+                $relationships[] = [
+                    'name' => $relName,
+                    'entity' => str_replace('\\', '\\\\',$relMeta['targetEntity']),
+                    'type' => 'multiple',
+                    'extensionCall' =>'{% set ' . $relName . ' = getEntities("'.$relMeta['targetEntity'].'")%}'];
             }
         }
 

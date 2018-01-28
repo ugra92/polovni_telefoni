@@ -11,3 +11,5 @@ php bin/console make:entity __name__
 /** Compile assets */
 yarn run encore dev
 
+/** Generate crud for entity */
+php bin/console app:generate-crud App:__name__

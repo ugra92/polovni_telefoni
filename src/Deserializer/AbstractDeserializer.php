@@ -1,5 +1,6 @@
 <?php
 namespace App\Deserializer;
+use App\Manager\BaseManager;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -15,14 +16,22 @@ class AbstractDeserializer
      * @var EntityManager
      */
     private $entityManager;
+    /**
+     * @var BaseManager
+     */
+    private $baseManager;
 
-    public function __construct(EntityManager $entityManager)
+    /**
+     * @param EntityManager $entityManager
+     * @var $baseManager BaseManager
+     */
+    public function __construct(EntityManager $entityManager, BaseManager $baseManager)
     {
+        $this->baseManager = $baseManager;
         $this->entityManager = $entityManager;
     }
 
     public function deserialize($jsonData, $class){
-        $metaData = $this->entityManager->getClassMetadata($class);
         $instance = new $class();
         $data = json_decode($jsonData);
         foreach ($data as $key => $value) {

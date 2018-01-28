@@ -14,17 +14,17 @@
     {% endif %}
 {% endfor %}
 {% for rel in relationships %}
-    {% if rel['type'] == 'single' %}
+    {#{% if rel['type'] == 'single' %}#}
         {% autoescape %}
             {{ ('{% set entityName = "' ~ rel['entity'] ~ '" %}')|raw }}
         {% endautoescape %}
         {{ '{% set ' ~ rel['name'] ~ ' = get_entities(entityName)%}' }}
-        <select name="{{ rel['name'] }}" id="{{ rel['name'] }}" class="form-control">
+        <select name="{{ rel['name'] }}" id="{{ rel['name'] }}" class="form-control" {{ rel['type'] == 'single' ? '' : 'multiple' }}>
             {{ '{% for item in '~rel['name']~' %}' }}
             <option value="{{ '{{ item.getId }}' }}">{{ '{{ item.toString }}'}}</option>
             {{ '{% endfor %}' }}
         </select>
-    {% endif %}
+    {#{% endif %}#}
 {% endfor %}
 
 <button id="save" class="btn btn-default">Sacuvaj</button>
@@ -33,8 +33,12 @@
     <script>
         var data = {};
 
-        function handleResponse(data) {
-            console.log(data);
+        function handleResponse(ctx, data) {
+            if(data.code === 200){
+                toastr.success(data.status);
+            }else {
+                toastr.error(data.status);
+            }
         }
         $('#save').on('click', function () {
             $('input').each(function (index, item) {
@@ -52,7 +56,6 @@
                 data[$(item).prop('name')] = { id : $(item).val()};
             });
 
-            console.log(data);
             adapter.sendData('/json/{{ saveRoute }}/create',data, 'POST', handleResponse, this);
         });
     </script>

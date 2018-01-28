@@ -80,5 +80,13 @@ class AttributeValue
         $this->attribute = $attribute;
     }
 
+    /**
+     * @return mixed
+     */
+    public function toString()
+    {
+        return $this->getValue();
+    }
+
 
 }

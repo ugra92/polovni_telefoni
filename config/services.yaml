@@ -32,4 +32,9 @@ services:
 
     App\Deserializer\AbstractDeserializer:
       public: true
+      arguments: ["@doctrine.orm.entity_manager", "@app.base.manager"]
+
+    app.base.manager:
+      class: App\Manager\BaseManager
+      public: true
       arguments: ["@doctrine.orm.entity_manager"]
